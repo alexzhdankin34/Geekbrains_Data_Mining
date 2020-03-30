@@ -49,7 +49,7 @@ def get_post_data(post_url: str) -> dict:
     template_data['writer']['name'] = soap.select_one('div.text-lg').text
     template_data['writer']['url'] = f'{Base_URL}{soap.select("div.col-md-5 a")[0].get("href")}'
     record_to_json(template_data)
-    #print(1)
+    print(1)
     return template_data
 
 
