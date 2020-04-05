@@ -16,6 +16,9 @@ class BlogparsePipeline(object):
 
     def process_item(self, item, spider):
         collection = self.db[spider.name]
+        if spider.name == 'instagram' and  'post' in item.keys():
+            collection = self.db[spider.name]['posts']
+
         collection.insert_one (item)
         return item
 
